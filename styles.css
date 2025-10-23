@@ -1,7 +1,6 @@
-/* IllusionLab — styles v1.1.3 */
+/* IllusionLab — styles v1.2 (Real Edition) */
 :root{
-  --bg:#0b1022; --ink:#eaf1ff; --muted:#98a7d4;
-  --card:#101739; --line:#1c2550; --cta:#2dd4bf; --ghost:#2b3567;
+  --bg:#0b1022; --ink:#eaf1ff; --muted:#98a7d4; --card:#101739; --line:#1c2550; --cta:#2dd4bf; --ghost:#2b3567;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -25,11 +24,11 @@ footer{max-width:900px;margin:0 auto 30px; color:var(--muted); padding:0 16px}
 .answers button.correct{outline:2px solid #22c55e}
 .answers button.wrong{outline:2px solid #ef4444}
 .actions{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
-svg{max-width:100%;height:auto}
-.helper{margin-top:6px;color:#c1cff6}
-.board{width:100%;border-collapse:collapse;margin-top:8px}
-.board th,.board td{border-bottom:1px dashed var(--line);padding:6px 8px;text-align:left}
 .modal{position:fixed;inset:0;background:#0009;display:grid;place-items:center}
 .modal[hidden]{display:none}
-.modal-content{max-width:720px}
+.modal-content{max-width:760px}
+.illusion-img{max-width:100%;height:auto;border-radius:12px;box-shadow:0 4px 18px #0008;background:#0b112d}
+.caption{margin:6px 0;color:#c1cff6;font-size:14px}
 .intro-actions{display:flex;gap:10px;flex-wrap:wrap}
+.board{width:100%;border-collapse:collapse;margin-top:8px}
+.board th,.board td{border-bottom:1px dashed var(--line);padding:6px 8px;text-align:left}

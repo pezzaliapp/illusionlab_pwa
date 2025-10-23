@@ -3,30 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,viewport-fit=cover">
-<title>IllusionLab — PWA (pezzaliAPP)</title>
+<title>IllusionLab — PWA (Real Edition)</title>
 <meta name="theme-color" content="#0b1022">
-<meta name="description" content="IllusionLab — 10 illusioni ottiche trasformate in un gioco-quiz interattivo. Funziona offline come PWA.">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="styles.css">
 <link rel="apple-touch-icon" href="icon/illusion-192.png">
-<script>
-if('serviceWorker' in navigator){ window.addEventListener('load',()=>{navigator.serviceWorker.register('service-worker.js');});}
-</script>
+<script>if('serviceWorker' in navigator){ addEventListener('load',()=>navigator.serviceWorker.register('service-worker.js')); }</script>
 </head>
 <body>
 <header>
   <h1>🧠 IllusionLab — PWA</h1>
   <nav class="actions-header">
-    <button id="btnLang" class="ghost" aria-label="Language">IT/EN</button>
-    <button id="btnInstall" class="ghost" hidden>Installa</button>
+    <button id="btnLang" class="ghost">IT/EN</button>
+    <button id="btnCredits" class="ghost">Crediti</button>
   </nav>
 </header>
 
 <main>
   <section id="intro" class="card">
-    <p data-i18n="introText">
-      <strong>Regole:</strong> 10 illusioni, 1 domanda per ciascuna. Rispondi entro il tempo, poi usa <em>Mostra prova</em> per capire il trucco. Obiettivo: fare 10/10… o imparare a dubitare della percezione 😉
-    </p>
+    <p data-i18n="introText"><strong>Regole:</strong> 10 illusioni iconiche, con immagini originali (Wikimedia/CC). Rispondi entro il tempo, poi usa <em>Mostra prova</em>.</p>
     <div class="intro-actions">
       <button id="start" class="cta" data-i18n="start">Inizia</button>
       <button id="showBoard" class="ghost" data-i18n="leaderboard">Classifica</button>
@@ -72,7 +67,7 @@ if('serviceWorker' in navigator){ window.addEventListener('load',()=>{navigator.
 </main>
 
 <footer>
-  <small>© 2025 pezzaliAPP — IllusionLab v1.1.3 • Offline-ready • IT/EN</small>
+  <small>© 2025 pezzaliAPP — IllusionLab v1.2 (Real Edition) • Offline-ready • IT/EN</small>
 </footer>
 
 <div id="modal" class="modal" hidden>
@@ -82,11 +77,16 @@ if('serviceWorker' in navigator){ window.addEventListener('load',()=>{navigator.
   </div>
 </div>
 
+<div id="credits" class="modal" hidden>
+  <div class="modal-content card">
+    <div class="modal-body">
+      <h3>Crediti immagini (Wikimedia Commons)</h3>
+      <ul id="creditsList"></ul>
+    </div>
+    <button id="creditsClose" class="cta">OK</button>
+  </div>
+</div>
+
 <script src="app.js"></script>
-<script>
-let deferred;
-window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferred=e; document.getElementById('btnInstall').hidden=false;});
-document.getElementById('btnInstall').addEventListener('click', async ()=>{ if(deferred){ deferred.prompt(); }});
-</script>
 </body>
 </html>
