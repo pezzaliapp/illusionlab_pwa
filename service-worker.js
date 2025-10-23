@@ -1,5 +1,5 @@
-// IllusionLab — offline cache v1.1.1
-const CACHE = 'illusionlab-v1-1-1';
+// IllusionLab — simple offline cache
+const CACHE = 'illusionlab-v1';
 const ASSETS = [
   './','./index.html','./styles.css','./app.js','./manifest.json',
   './icon/illusion-192.png','./icon/illusion-512.png'
