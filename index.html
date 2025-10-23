@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,viewport-fit=cover">
-<title>IllusionLab — PWA (Real Edition)</title>
-<meta name="theme-color" content="#0b1022">
-<link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="styles.css">
-<link rel="apple-touch-icon" href="icon/illusion-192.png">
-<script>if('serviceWorker' in navigator){ addEventListener('load',()=>navigator.serviceWorker.register('service-worker.js')); }</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,viewport-fit=cover" />
+  <title>IllusionLab — PWA (Bright Edition)</title>
+  <meta name="theme-color" content="#0b1022" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="apple-touch-icon" href="icon/illusion-192.png" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      addEventListener('load', () => navigator.serviceWorker.register('service-worker.js'));
+    }
+  </script>
 </head>
 <body>
 <header>
   <h1>🧠 IllusionLab — PWA</h1>
   <nav class="actions-header">
+    <button id="btnTheme" class="ghost" aria-label="Tema">🌙</button>
     <button id="btnLang" class="ghost">IT/EN</button>
     <button id="btnCredits" class="ghost">Crediti</button>
   </nav>
@@ -21,7 +26,7 @@
 
 <main>
   <section id="intro" class="card">
-    <p data-i18n="introText"><strong>Regole:</strong> 10 illusioni iconiche, con immagini originali (Wikimedia/CC). Rispondi entro il tempo, poi usa <em>Mostra prova</em>.</p>
+    <p data-i18n="introText"><strong>Regole:</strong> 10 illusioni con immagini originali (Wikimedia/CC). Modalità <em>Bright</em> per massima leggibilità sul tema scuro.</p>
     <div class="intro-actions">
       <button id="start" class="cta" data-i18n="start">Inizia</button>
       <button id="showBoard" class="ghost" data-i18n="leaderboard">Classifica</button>
@@ -67,7 +72,7 @@
 </main>
 
 <footer>
-  <small>© 2025 pezzaliAPP — IllusionLab v1.2 (Real Edition) • Offline-ready • IT/EN</small>
+  <small>© 2025 pezzaliAPP — IllusionLab v1.3 (Bright Edition) • Offline-ready • IT/EN</small>
 </footer>
 
 <div id="modal" class="modal" hidden>
