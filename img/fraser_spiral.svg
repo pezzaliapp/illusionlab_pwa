@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420">
+  <rect width="100%" height="100%" fill="#eef2ff"/>
+  <g fill="none" stroke="#111827" stroke-width="10" opacity="0.9">
+    <circle cx="210" cy="210" r="40"/>
+    <circle cx="210" cy="210" r="80"/>
+    <circle cx="210" cy="210" r="120"/>
+    <circle cx="210" cy="210" r="160"/>
+  </g>
+  <g stroke="#111827" stroke-width="10">
+    <path d="M210,50 l40,15 M290,70 l35,25 M350,110 l25,35 M380,170 l10,40 M380,240 l-10,40 M350,310 l-25,35 M290,350 l-35,25 M210,370 l-40,-15 M130,350 l-35,-25 M70,310 l-25,-35 M40,240 l-10,-40 M40,170 l10,-40 M70,110 l25,-35 M130,70 l35,-25"/>
+  </g>
+</svg>
