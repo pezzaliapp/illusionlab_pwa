@@ -1,4 +1,4 @@
-/* IllusionLab — styles */
+/* IllusionLab — styles v1.1.1 */
 :root{
   --bg:#0b1022; --ink:#eaf1ff; --muted:#98a7d4;
   --card:#101739; --line:#1c2550; --cta:#2dd4bf; --ghost:#2b3567;
@@ -10,19 +10,26 @@ body{margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial; col
 header{display:flex;justify-content:space-between;align-items:center;padding:14px 12px;border-bottom:1px solid var(--line);
   background:#0e1533cc; backdrop-filter:blur(6px); position:sticky; top:0; z-index:10}
 h1{margin:0;font-size:18px}
+.actions-header{display:flex;gap:8px}
 main{max-width:900px;margin:0 auto;padding:16px;display:grid;gap:14px}
 .card{background:linear-gradient(180deg,#0f1840,#0b1130); border:1px solid var(--line); border-radius:14px; padding:16px}
 footer{max-width:900px;margin:0 auto 30px; color:var(--muted); padding:0 16px}
 .cta{background:var(--cta); color:#052; border:none; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer}
 .ghost{background:var(--ghost); color:#cfe3ff; border:1px solid var(--line); padding:9px 12px; border-radius:10px; cursor:pointer}
-.hud{display:flex;justify-content:space-between;margin-bottom:10px;color:var(--muted)}
+.hud{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;color:var(--muted)}
+.timer{font-weight:700}
 .illusion-host{display:grid;place-items:center;min-height:260px;background:#0c1436;border:1px dashed #263169;border-radius:12px;padding:8px}
 .q{font-weight:700;margin:8px 0}
 .answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px}
 .answers button{padding:10px;border-radius:10px;border:1px solid var(--line);background:#0d1540;color:var(--ink);cursor:pointer}
 .answers button.correct{outline:2px solid #22c55e}
 .answers button.wrong{outline:2px solid #ef4444}
-.actions{display:flex;gap:10px;margin-top:10px}
+.actions{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
 svg{max-width:100%;height:auto}
-/* small helper shapes */
 .helper{margin-top:6px;color:#c1cff6}
+.board{width:100%;border-collapse:collapse;margin-top:8px}
+.board th,.board td{border-bottom:1px dashed var(--line);padding:6px 8px;text-align:left}
+.modal{position:fixed;inset:0;background:#0009;display:grid;place-items:center}
+.modal[hidden]{display:none}
+.modal-content{max-width:720px}
+.intro-actions{display:flex;gap:10px;flex-wrap:wrap}
