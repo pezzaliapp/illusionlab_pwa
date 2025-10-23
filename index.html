@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<title>IllusionLab — PWA (pezzaliAPP)</title>
+<meta name="theme-color" content="#0b1022">
+<meta name="description" content="IllusionLab — 10 illusioni ottiche trasformate in un gioco-quiz interattivo. Funziona offline come PWA.">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+<link rel="apple-touch-icon" href="icon/illusion-192.png">
+<script>
+if('serviceWorker' in navigator){ window.addEventListener('load',()=>{navigator.serviceWorker.register('service-worker.js');});}
+</script>
+</head>
+<body>
+<header>
+  <h1>🧠 IllusionLab — PWA</h1>
+  <nav class="actions-header">
+    <button id="btnLang" class="ghost" aria-label="Language">IT/EN</button>
+    <button id="btnInstall" class="ghost" hidden>Installa</button>
+  </nav>
+</header>
+
+<main>
+  <section id="intro" class="card">
+    <p data-i18n="introText">
+      <strong>Regole:</strong> 10 illusioni, 1 domanda per ciascuna. Rispondi entro il tempo, poi usa <em>Mostra prova</em> per capire il trucco. Obiettivo: fare 10/10… o imparare a dubitare della percezione 😉
+    </p>
+    <div class="intro-actions">
+      <button id="start" class="cta" data-i18n="start">Inizia</button>
+      <button id="showBoard" class="ghost" data-i18n="leaderboard">Classifica</button>
+    </div>
+  </section>
+
+  <section id="stage" class="card" hidden>
+    <div class="hud">
+      <div id="level">1/10</div>
+      <div id="score">Punti: 0</div>
+      <div id="timer" class="timer">⏱ 25s</div>
+    </div>
+    <div id="illusionHost" class="illusion-host" aria-live="polite"></div>
+    <div id="question" class="q"></div>
+    <div id="answers" class="answers"></div>
+    <div class="actions">
+      <button id="showHint" class="ghost" data-i18n="showProof">Mostra prova</button>
+      <button id="showExplain" class="ghost" data-i18n="explain">Spiegazione</button>
+      <button id="next" class="cta" disabled data-i18n="next">Avanti ▶</button>
+    </div>
+  </section>
+
+  <section id="final" class="card" hidden>
+    <h2 data-i18n="endTitle">🎉 Fine partita</h2>
+    <p id="finalMsg"></p>
+    <div class="final-actions">
+      <button id="saveScore" class="cta" data-i18n="saveScore">Salva punteggio</button>
+      <button id="restart" class="ghost" data-i18n="playAgain">Rigioca</button>
+      <button id="openBoard" class="ghost" data-i18n="leaderboard">Classifica</button>
+    </div>
+  </section>
+
+  <section id="board" class="card" hidden>
+    <h2 data-i18n="boardTitle">🏆 Classifica locale</h2>
+    <table id="boardTable" class="board">
+      <thead>
+        <tr><th data-i18n="name">Nome</th><th data-i18n="pts">Punti</th><th data-i18n="time">Tempo</th><th data-i18n="date">Data</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button id="closeBoard" class="ghost" data-i18n="close">Chiudi</button>
+  </section>
+</main>
+
+<footer>
+  <small>© 2025 pezzaliAPP — IllusionLab v1.1 • Offline-ready • IT/EN</small>
+</footer>
+
+<!-- Modal for explanations -->
+<div id="modal" class="modal" hidden>
+  <div class="modal-content card">
+    <div class="modal-body" id="modalBody"></div>
+    <button id="modalClose" class="cta">OK</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script>
+let deferred;
+window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferred=e; document.getElementById('btnInstall').hidden=false;});
+document.getElementById('btnInstall').addEventListener('click', async ()=>{ if(deferred){ deferred.prompt(); }});
+</script>
+</body>
+</html>
